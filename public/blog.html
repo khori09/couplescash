@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - CouplesCash</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-green: #BBF174;
+            --dark-charcoal: #1A1A1A;
+            --text-gray: #666666;
+            --light-gray: #F8F9FA;
+            --dark-teal: #035C67;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--dark-charcoal);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: white;
+            border-bottom: 1px solid #eee;
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header a {
+            text-decoration: none;
+            color: var(--dark-charcoal);
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: var(--dark-teal);
+        }
+        
+        .subtitle {
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+        
+        h2 {
+            font-size: 28px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--dark-teal);
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: var(--dark-charcoal);
+        }
+        
+        p, li {
+            margin-bottom: 16px;
+            line-height: 1.8;
+            color: var(--text-gray);
+        }
+        
+        ul, ol {
+            padding-left: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .highlight-box {
+            background: var(--primary-green);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 32px 0;
+        }
+        
+        .highlight-box p {
+            color: var(--dark-charcoal);
+            font-weight: 500;
+        }
+        
+        .featured-post {
+            background: var(--light-gray);
+            padding: 32px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+        
+        .featured-badge {
+            background: var(--primary-green);
+            color: var(--dark-charcoal);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+        
+        .post-title {
+            color: var(--dark-charcoal);
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-decoration: none;
+        }
+        
+        .post-title:hover {
+            color: var(--dark-teal);
+        }
+        
+        .post-meta {
+            color: var(--text-gray);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        
+        .post-excerpt {
+            margin-bottom: 16px;
+        }
+        
+        .read-more {
+            color: var(--dark-teal);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        
+        .blog-grid {
+            display: grid;
+            gap: 32px;
+            margin: 40px 0;
+        }
+        
+        .blog-post {
+            background: white;
+            border: 2px solid var(--light-gray);
+            padding: 24px;
+            border-radius: 12px;
+            transition: box-shadow 0.2s ease;
+        }
+        
+        .blog-post:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-tag {
+            background: var(--dark-teal);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        
+        .categories {
+            display: flex;
+            gap: 12px;
+            margin: 32px 0;
+            flex-wrap: wrap;
+        }
+        
+        .category-filter {
+            background: var(--light-gray);
+            color: var(--text-gray);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+        
+        .category-filter:hover,
+        .category-filter.active {
+            background: var(--primary-green);
+            color: var(--dark-charcoal);
+        }
+        
+        .newsletter-signup {
+            background: var(--dark-teal);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .newsletter-signup h3 {
+            color: white;
+            margin-bottom: 12px;
+        }
+        
+        .newsletter-signup p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .newsletter-form button {
+            background: var(--primary-green);
+            color: var(--dark-charcoal);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 600px) {
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background: var(--primary-green);
+            color: var(--dark-charcoal);
+            padding: 12px 24px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 40px;
+            transition: transform 0.2s ease;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="/">💑 CouplesCash</a>
+    </header>
+    
+    <div class="container">
+        <h1>The CouplesCash Blog</h1>
+        <p class="subtitle">Tips, insights, and stories about managing money together as a couple.</p>
+        
+        <div class="categories">
+            <a href="#" class="category-filter active">All Posts</a>
+            <a href="#" class="category-filter">Money Tips</a>
+            <a href="#" class="category-filter">Relationship Advice</a>
+            <a href="#" class="category-filter">Product Updates</a>
+            <a href="#" class="category-filter">Success Stories</a>
+            <a href="#" class="category-filter">Financial Education</a>
+        </div>
+        
+        <div class="featured-post">
+            <div class="featured-badge">Featured</div>
+            <a href="#" class="post-title">The Complete Guide to Joint Finances for Modern Couples</a>
+            <div class="post-meta">January 15, 2025 • By Alex Chen • 8 min read</div>
+            <div class="post-excerpt">
+                <p>Making the transition from separate finances to joint money management doesn't have to be scary. We break down everything couples need to know about combining their financial lives while maintaining individual autonomy and trust.</p>
+            </div>
+            <a href="#" class="read-more">Read Full Article →</a>
+        </div>
+        
+        <div class="blog-grid">
+            <article class="blog-post">
+                <div class="category-tag">Money Tips</div>
+                <a href="#" class="post-title">5 Money Conversations Every New Couple Should Have</a>
+                <div class="post-meta">January 12, 2025 • By Dr. Lisa Park • 6 min read</div>
+                <div class="post-excerpt">
+                    <p>Talking about money can be awkward, but these essential conversations will set your relationship up for financial success. From debt disclosure to spending habits, here's what to discuss early.</p>
+                </div>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+            
+            <article class="blog-post">
+                <div class="category-tag">Product Updates</div>
+                <a href="#" class="post-title">New Feature: Shared Savings Goals with Visual Progress</a>
+                <div class="post-meta">January 10, 2025 • By Sarah Kim • 4 min read</div>
+                <div class="post-excerpt">
+                    <p>We're excited to announce our newest feature - shared savings goals with beautiful visual progress tracking. Set targets together and celebrate milestones as you save for what matters most.</p>
+                </div>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+            
+            <article class="blog-post">
+                <div class="category-tag">Success Stories</div>
+                <a href="#" class="post-title">How Jake and Maria Paid Off $40K in Debt Together</a>
+                <div class="post-meta">January 8, 2025 • By David Wu • 7 min read</div>
+                <div class="post-excerpt">
+                    <p>When Jake and Maria started dating, they had a combined $40,000 in credit card debt. Here's how they used CouplesCash's transparency tools and spending insights to become debt-free in 18 months.</p>
+                </div>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+            
+            <article class="blog-post">
+                <div class="category-tag">Financial Education</div>
+                <a href="#" class="post-title">FDIC Insurance for Couples: What You Need to Know</a>
+                <div class="post-meta">January 5, 2025 • By Marcus Thompson • 5 min read</div>
+                <div class="post-excerpt">
+                    <p>Joint accounts offer unique FDIC insurance benefits that many couples don't know about. Learn how your money is protected and why joint accounts can actually increase your coverage limits.</p>
+                </div>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+            
+            <article class="blog-post">
+                <div class="category-tag">Relationship Advice</div>
+                <a href="#" class="post-title">Fighting About Money? Here's How to Stop</a>
+                <div class="post-meta">January 3, 2025 • By Dr. Lisa Park • 8 min read</div>
+                <div class="post-excerpt">
+                    <p>Money is the top cause of relationship stress. Our behavioral economist breaks down why couples fight about finances and provides practical strategies for better money communication.</p>
+                </div>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+            
+            <article class="blog-post">
+                <div class="category-tag">Money Tips</div>
+                <a href="#" class="post-title">The 50/30/20 Rule: A Couples' Guide to Budgeting</a>
+                <div class="post-meta">December 28, 2024 • By Alex Chen • 6 min read</div>
+                <div class="post-excerpt">
+                    <p>The popular 50/30/20 budgeting rule gets more complex when you're managing money as a couple. Here's how to adapt this simple framework for shared expenses and individual spending.</p>
+                </div>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+            
+            <article class="blog-post">
+                <div class="category-tag">Product Updates</div>
+                <a href="#" class="post-title">Introducing Spending Insights: AI-Powered Financial Analysis</a>
+                <div class="post-meta">December 25, 2024 • By Jamie Rodriguez • 5 min read</div>
+                <div class="post-excerpt">
+                    <p>Our new Spending Insights feature uses artificial intelligence to analyze your joint spending patterns and provide personalized recommendations for saving money and reaching your goals faster.</p>
+                </div>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+            
+            <article class="blog-post">
+                <div class="category-tag">Success Stories</div>
+                <a href="#" class="post-title">From Separate Accounts to Wedding Fund: Emma & Tom's Story</a>
+                <div class="post-meta">December 22, 2024 • By David Wu • 6 min read</div>
+                <div class="post-excerpt">
+                    <p>Emma and Tom were nervous about combining finances, but CouplesCash's approval features helped them save $15,000 for their dream wedding while maintaining spending independence.</p>
+                </div>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+            
+            <article class="blog-post">
+                <div class="category-tag">Financial Education</div>
+                <a href="#" class="post-title">Building Your Emergency Fund as a Couple</a>
+                <div class="post-meta">December 20, 2024 • By Alex Chen • 7 min read</div>
+                <div class="post-excerpt">
+                    <p>Emergency funds are crucial for financial security, but how much should couples save? We explore different approaches to emergency savings and how to build your fund together.</p>
+                </div>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+        </div>
+        
+        <div class="newsletter-signup">
+            <h3>Never Miss a Post</h3>
+            <p>Get our latest tips for couple's finances delivered to your inbox every week.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        
+        <div class="highlight-box">
+            <p><strong>Have a story to share?</strong> We love featuring real couples and their financial journeys. Contact us at <strong>stories@couplescash.org</strong> to share your experience with CouplesCash.</p>
+        </div>
+        
+        <h2>Popular Topics</h2>
+        <ul>
+            <li><strong>Getting Started:</strong> First steps for couples combining their finances</li>
+            <li><strong>Debt Management:</strong> Strategies for paying off debt together</li>
+            <li><strong>Saving Goals:</strong> Setting and achieving financial milestones as a team</li>
+            <li><strong>Spending Habits:</strong> Understanding and improving your money behaviors</li>
+            <li><strong>Financial Communication:</strong> How to talk about money without fighting</li>
+            <li><strong>Security & Safety:</strong> Protecting your joint finances from fraud</li>
+        </ul>
+        
+        <a href="/" class="back-btn">Back to Home</a>
+    </div>
+</body>
+</html>

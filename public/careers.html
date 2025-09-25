@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - CouplesCash</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-green: #BBF174;
+            --dark-charcoal: #1A1A1A;
+            --text-gray: #666666;
+            --light-gray: #F8F9FA;
+            --dark-teal: #035C67;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--dark-charcoal);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: white;
+            border-bottom: 1px solid #eee;
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header a {
+            text-decoration: none;
+            color: var(--dark-charcoal);
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: var(--dark-teal);
+        }
+        
+        .subtitle {
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+        
+        h2 {
+            font-size: 28px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--dark-teal);
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: var(--dark-charcoal);
+        }
+        
+        p, li {
+            margin-bottom: 16px;
+            line-height: 1.8;
+            color: var(--text-gray);
+        }
+        
+        ul, ol {
+            padding-left: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .highlight-box {
+            background: var(--primary-green);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 32px 0;
+        }
+        
+        .highlight-box p {
+            color: var(--dark-charcoal);
+            font-weight: 500;
+        }
+        
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 24px 0;
+        }
+        
+        .culture-item {
+            background: var(--light-gray);
+            padding: 20px;
+            border-radius: 12px;
+        }
+        
+        .culture-item h4 {
+            color: var(--dark-teal);
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .culture-item p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+        
+        .job-listing {
+            background: white;
+            border: 2px solid var(--light-gray);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .job-title {
+            color: var(--dark-charcoal);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .job-meta {
+            color: var(--text-gray);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        
+        .job-description {
+            margin-bottom: 16px;
+        }
+        
+        .job-requirements {
+            margin-bottom: 0;
+        }
+        
+        .job-requirements h5 {
+            color: var(--dark-charcoal);
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .job-requirements ul {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        
+        .benefit-item {
+            background: var(--light-gray);
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .benefit-item h4 {
+            color: var(--dark-teal);
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        
+        .benefit-item p {
+            font-size: 12px;
+            margin-bottom: 0;
+        }
+        
+        .apply-box {
+            background: var(--light-gray);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 32px 0;
+            text-align: center;
+        }
+        
+        .apply-box h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background: var(--primary-green);
+            color: var(--dark-charcoal);
+            padding: 12px 24px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 40px;
+            transition: transform 0.2s ease;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="/">💑 CouplesCash</a>
+    </header>
+    
+    <div class="container">
+        <h1>Join Our Team</h1>
+        <p class="subtitle">Help us build the future of couples' finance. We're looking for passionate people who want to strengthen relationships through better banking.</p>
+        
+        <div class="highlight-box">
+            <p>We're a small, fast-growing team building something that matters. Every person we hire has a direct impact on thousands of couples and their financial well-being.</p>
+        </div>
+        
+        <h2>Our Culture</h2>
+        <p>We believe that great products come from great teams. Our culture is built around empathy, transparency, and continuous learning.</p>
+        
+        <div class="culture-grid">
+            <div class="culture-item">
+                <h4>Remote-First</h4>
+                <p>Work from anywhere in the US. We have team members across the country and quarterly in-person meetups.</p>
+            </div>
+            <div class="culture-item">
+                <h4>User-Obsessed</h4>
+                <p>Every decision starts with "How does this help couples?" We regularly talk to our users and incorporate feedback.</p>
+            </div>
+            <div class="culture-item">
+                <h4>Move Fast</h4>
+                <p>Small team means big impact. We ship quickly, iterate based on data, and aren't afraid to experiment.</p>
+            </div>
+            <div class="culture-item">
+                <h4>Own Your Work</h4>
+                <p>Take initiative, make decisions, and see your ideas come to life. Everyone here is a leader in their area.</p>
+            </div>
+            <div class="culture-item">
+                <h4>Learn Together</h4>
+                <p>We share knowledge openly, learn from mistakes, and invest in each other's growth and development.</p>
+            </div>
+            <div class="culture-item">
+                <h4>Life Balance</h4>
+                <p>We work hard but respect boundaries. Unlimited PTO, flexible hours, and no "always-on" culture.</p>
+            </div>
+        </div>
+        
+        <h2>Benefits & Perks</h2>
+        <p>We offer competitive compensation plus benefits designed to support your whole life:</p>
+        
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <h4>Health & Wellness</h4>
+                <p>100% covered medical, dental, vision for you and family</p>
+            </div>
+            <div class="benefit-item">
+                <h4>Time Off</h4>
+                <p>Unlimited PTO plus 12 company holidays</p>
+            </div>
+            <div class="benefit-item">
+                <h4>Equity</h4>
+                <p>Meaningful equity stake in our growing company</p>
+            </div>
+            <div class="benefit-item">
+                <h4>Home Office</h4>
+                <p>$2,000 equipment budget plus monthly stipend</p>
+            </div>
+            <div class="benefit-item">
+                <h4>Learning</h4>
+                <p>$1,500 annual education budget for courses, conferences</p>
+            </div>
+            <div class="benefit-item">
+                <h4>Team Retreats</h4>
+                <p>Quarterly in-person meetups in amazing locations</p>
+            </div>
+            <div class="benefit-item">
+                <h4>401(k)</h4>
+                <p>Company matching up to 4% of salary</p>
+            </div>
+            <div class="benefit-item">
+                <h4>Parental Leave</h4>
+                <p>12 weeks paid leave for all new parents</p>
+            </div>
+        </div>
+        
+        <h2>Open Positions</h2>
+        <p>We're growing fast and looking for talented people to join our mission. All positions are remote-friendly within the US.</p>
+        
+        <div class="job-listing">
+            <div class="job-title">Senior Full-Stack Engineer</div>
+            <div class="job-meta">Engineering • Full-time • Remote</div>
+            <div class="job-description">
+                <p>Join our core engineering team building secure, scalable financial infrastructure. You'll work on everything from mobile apps to backend APIs, helping couples manage their money better.</p>
+            </div>
+            <div class="job-requirements">
+                <h5>What we're looking for:</h5>
+                <ul>
+                    <li>5+ years experience with full-stack development</li>
+                    <li>Experience with React Native, Node.js, and PostgreSQL</li>
+                    <li>Understanding of financial systems and security</li>
+                    <li>Passion for user-centered product development</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="job-listing">
+            <div class="job-title">Product Designer</div>
+            <div class="job-meta">Design • Full-time • Remote</div>
+            <div class="job-description">
+                <p>Shape the user experience for thousands of couples. You'll design intuitive interfaces that make complex financial concepts simple and accessible.</p>
+            </div>
+            <div class="job-requirements">
+                <h5>What we're looking for:</h5>
+                <ul>
+                    <li>3+ years of product design experience, preferably in fintech</li>
+                    <li>Strong portfolio showing user-centered design process</li>
+                    <li>Experience with mobile-first design and design systems</li>
+                    <li>Empathy for users and passion for solving real problems</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="job-listing">
+            <div class="job-title">Customer Success Manager</div>
+            <div class="job-meta">Customer Success • Full-time • Remote</div>
+            <div class="job-description">
+                <p>Be the voice of our users. You'll help couples get the most out of CouplesCash while gathering feedback to improve our product.</p>
+            </div>
+            <div class="job-requirements">
+                <h5>What we're looking for:</h5>
+                <ul>
+                    <li>2+ years in customer success or support, preferably fintech</li>
+                    <li>Excellent communication skills and empathy</li>
+                    <li>Experience with help desk tools and user analytics</li>
+                    <li>Passion for helping people succeed financially</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="job-listing">
+            <div class="job-title">Marketing Manager</div>
+            <div class="job-meta">Marketing • Full-time • Remote</div>
+            <div class="job-description">
+                <p>Tell our story and help couples discover CouplesCash. You'll develop content, run campaigns, and build our brand in the fintech space.</p>
+            </div>
+            <div class="job-requirements">
+                <h5>What we're looking for:</h5>
+                <ul>
+                    <li>3+ years in digital marketing, preferably B2C or fintech</li>
+                    <li>Experience with content marketing, social media, and paid ads</li>
+                    <li>Strong writing skills and creative thinking</li>
+                    <li>Understanding of couples' financial behavior and pain points</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="job-listing">
+            <div class="job-title">DevOps Engineer</div>
+            <div class="job-meta">Engineering • Full-time • Remote</div>
+            <div class="job-description">
+                <p>Own our infrastructure and security posture. You'll ensure our systems are reliable, secure, and scalable as we grow.</p>
+            </div>
+            <div class="job-requirements">
+                <h5>What we're looking for:</h5>
+                <ul>
+                    <li>4+ years in DevOps/SRE, preferably in financial services</li>
+                    <li>Experience with AWS, Kubernetes, and Infrastructure as Code</li>
+                    <li>Strong security mindset and compliance experience</li>
+                    <li>Passion for automation and system reliability</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>Don't See Your Role?</h2>
+        <p>We're always looking for exceptional people, even if we don't have an open position that matches your background. Areas where we'll be hiring soon include:</p>
+        <ul>
+            <li>Data Engineering & Analytics</li>
+            <li>Mobile Engineering (iOS/Android)</li>
+            <li>Financial Product Management</li>
+            <li>Compliance & Risk</li>
+            <li>Growth Marketing</li>
+        </ul>
+        
+        <div class="apply-box">
+            <h3>Ready to Apply?</h3>
+            <p>Send your resume and a note about why you're interested in CouplesCash to <strong>careers@couplescash.org</strong>. Include the position you're applying for in the subject line.</p>
+            
+            <p>We review applications on a rolling basis and aim to respond within one week. Our hiring process typically includes a phone screen, take-home project, and team interviews.</p>
+            
+            <p style="margin-bottom: 0;"><em>CouplesCash is an equal opportunity employer committed to diversity and inclusion. We welcome applications from all qualified candidates regardless of race, gender, sexual orientation, religion, age, or disability status.</em></p>
+        </div>
+        
+        <a href="/" class="back-btn">Back to Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - CouplesCash</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-green: #BBF174;
+            --dark-charcoal: #1A1A1A;
+            --text-gray: #666666;
+            --light-gray: #F8F9FA;
+            --dark-teal: #035C67;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--dark-charcoal);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: white;
+            border-bottom: 1px solid #eee;
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header a {
+            text-decoration: none;
+            color: var(--dark-charcoal);
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: var(--dark-teal);
+        }
+        
+        .subtitle {
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+        
+        h2 {
+            font-size: 28px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--dark-teal);
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: var(--dark-charcoal);
+        }
+        
+        p, li {
+            margin-bottom: 16px;
+            line-height: 1.8;
+            color: var(--text-gray);
+        }
+        
+        ul, ol {
+            padding-left: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .highlight-box {
+            background: var(--primary-green);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 32px 0;
+        }
+        
+        .highlight-box p {
+            color: var(--dark-charcoal);
+            font-weight: 500;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+        
+        .contact-card {
+            background: var(--light-gray);
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .contact-card h3 {
+            color: var(--dark-teal);
+            margin-bottom: 16px;
+            margin-top: 0;
+        }
+        
+        .contact-card .contact-method {
+            color: var(--dark-charcoal);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+        
+        .contact-card .contact-details {
+            color: var(--text-gray);
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+        
+        .form-container {
+            background: white;
+            border: 2px solid var(--light-gray);
+            padding: 32px;
+            border-radius: 12px;
+            margin: 32px 0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: var(--dark-charcoal);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.2s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .submit-btn {
+            background: var(--primary-green);
+            color: var(--dark-charcoal);
+            padding: 12px 32px;
+            border: none;
+            border-radius: 100px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .hours-box {
+            background: var(--light-gray);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 24px 0;
+        }
+        
+        .hours-box h4 {
+            color: var(--dark-charcoal);
+            margin-bottom: 12px;
+        }
+        
+        .hours-box p {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .hours-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background: var(--primary-green);
+            color: var(--dark-charcoal);
+            padding: 12px 24px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 40px;
+            transition: transform 0.2s ease;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="/">💑 CouplesCash</a>
+    </header>
+    
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p class="subtitle">We're here to help with any questions about your account, our features, or how CouplesCash can work for your relationship.</p>
+        
+        <div class="highlight-box">
+            <p>Need immediate help with your account? Log into the app and use our secure messaging feature for the fastest response.</p>
+        </div>
+        
+        <h2>Get in Touch</h2>
+        
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>Customer Support</h3>
+                <div class="contact-method">support@couplescash.org</div>
+                <div class="contact-details">For account help, technical issues, and general questions. We aim to respond within 2 hours during business hours.</div>
+            </div>
+            
+            <div class="contact-card">
+                <h3>Phone Support</h3>
+                <div class="contact-method">1-888-COUPLES</div>
+                <div class="contact-details">Call us for urgent account issues, lost cards, or fraud reporting. Available 24/7 for emergencies.</div>
+            </div>
+            
+            <div class="contact-card">
+                <h3>General Inquiries</h3>
+                <div class="contact-method">hello@couplescash.org</div>
+                <div class="contact-details">Questions about CouplesCash, partnership opportunities, or media inquiries.</div>
+            </div>
+            
+            <div class="contact-card">
+                <h3>Security Issues</h3>
+                <div class="contact-method">security@couplescash.org</div>
+                <div class="contact-details">Report security vulnerabilities, suspicious activity, or concerns about account safety.</div>
+            </div>
+        </div>
+        
+        <div class="hours-box">
+            <h4>Support Hours</h4>
+            <p><strong>Customer Support:</strong> Monday - Friday, 8:00 AM - 8:00 PM Eastern Time</p>
+            <p><strong>Phone Support:</strong> 24/7 for emergencies (lost cards, fraud, urgent account access)</p>
+            <p><strong>Response Time:</strong> Most emails answered within 2 hours during business hours</p>
+        </div>
+        
+        <h2>Send Us a Message</h2>
+        <p>Have a specific question or need help with something? Fill out the form below and we'll get back to you quickly.</p>
+        
+        <div class="form-container">
+            <form action="#" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a topic</option>
+                        <option value="account-help">Account Help</option>
+                        <option value="technical-issue">Technical Issue</option>
+                        <option value="billing-question">Billing Question</option>
+                        <option value="feature-request">Feature Request</option>
+                        <option value="partnership">Partnership Inquiry</option>
+                        <option value="media">Media Inquiry</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Please describe your question or issue in detail..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+        
+        <h2>Frequently Asked Questions</h2>
+        <p>Before reaching out, you might find your answer in our comprehensive <a href="/help.html" style="color: var(--dark-teal); text-decoration: underline;">Help Center</a>. We've covered the most common questions about:</p>
+        
+        <ul>
+            <li>Getting started with CouplesCash</li>
+            <li>Account management and settings</li>
+            <li>Security features and best practices</li>
+            <li>Transaction and card issues</li>
+            <li>Joint account features and approvals</li>
+            <li>Troubleshooting common problems</li>
+        </ul>
+        
+        <h2>Visit Our Office</h2>
+        <p>While we're primarily a remote team, our headquarters is located at:</p>
+        
+        <div class="contact-card" style="margin: 24px 0; text-align: left;">
+            <h3 style="margin-top: 0;">CouplesCash Inc.</h3>
+            <p style="margin-bottom: 8px;">123 Financial District Drive<br>Suite 500<br>San Francisco, CA 94105</p>
+            <p style="margin-bottom: 0; color: var(--text-gray); font-size: 14px;">Please note: This is our business address. For customer support, please use the contact methods above rather than visiting in person.</p>
+        </div>
+        
+        <h2>Follow Us</h2>
+        <p>Stay updated with CouplesCash news, tips, and feature announcements:</p>
+        <ul>
+            <li><strong>Blog:</strong> <a href="/blog.html" style="color: var(--dark-teal); text-decoration: underline;">couplescash.org/blog</a></li>
+            <li><strong>Twitter:</strong> @CouplesCash</li>
+            <li><strong>Instagram:</strong> @CouplesCashApp</li>
+            <li><strong>LinkedIn:</strong> CouplesCash Inc.</li>
+        </ul>
+        
+        <div class="highlight-box">
+            <p><strong>Emergency Contact:</strong> If you need to report a lost or stolen card outside of business hours, call 1-888-COUPLES and follow the prompts for emergency services. We're here 24/7 to protect your account.</p>
+        </div>
+        
+        <a href="/" class="back-btn">Back to Home</a>
+    </div>
+</body>
+</html>

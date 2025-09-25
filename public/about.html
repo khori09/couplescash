@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CouplesCash</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-green: #BBF174;
+            --dark-charcoal: #1A1A1A;
+            --text-gray: #666666;
+            --light-gray: #F8F9FA;
+            --dark-teal: #035C67;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--dark-charcoal);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: white;
+            border-bottom: 1px solid #eee;
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header a {
+            text-decoration: none;
+            color: var(--dark-charcoal);
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: var(--dark-teal);
+        }
+        
+        .subtitle {
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+        
+        h2 {
+            font-size: 28px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--dark-teal);
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: var(--dark-charcoal);
+        }
+        
+        p, li {
+            margin-bottom: 16px;
+            line-height: 1.8;
+            color: var(--text-gray);
+        }
+        
+        ul, ol {
+            padding-left: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .highlight-box {
+            background: var(--primary-green);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 32px 0;
+        }
+        
+        .highlight-box p {
+            color: var(--dark-charcoal);
+            font-weight: 500;
+            font-size: 18px;
+        }
+        
+        .story-box {
+            background: var(--light-gray);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 24px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+        
+        .team-member {
+            background: var(--light-gray);
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .team-member h4 {
+            color: var(--dark-charcoal);
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .team-member .title {
+            color: var(--dark-teal);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+        
+        .team-member p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 24px;
+        }
+        
+        .value-item {
+            background: white;
+            border: 2px solid var(--light-gray);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .value-item h4 {
+            color: var(--dark-teal);
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        
+        .value-item p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 32px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 16px;
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--dark-teal);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--text-gray);
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background: var(--primary-green);
+            color: var(--dark-charcoal);
+            padding: 12px 24px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 40px;
+            transition: transform 0.2s ease;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="/">💑 CouplesCash</a>
+    </header>
+    
+    <div class="container">
+        <h1>About CouplesCash</h1>
+        <p class="subtitle">Building stronger relationships through transparent, shared financial management.</p>
+        
+        <div class="highlight-box">
+            <p>We believe that money conversations shouldn't be awkward. CouplesCash makes joint finances simple, transparent, and stress-free for modern couples.</p>
+        </div>
+        
+        <h2>Our Mission</h2>
+        <p>Money is the leading cause of relationship stress for couples. We're changing that by creating the first banking platform designed specifically for partners who want to share their financial lives without giving up their independence.</p>
+        
+        <p>CouplesCash empowers couples to make financial decisions together while maintaining individual autonomy. Our platform provides the tools, insights, and transparency needed to build a stronger financial foundation for your relationship.</p>
+        
+        <h2>Our Story</h2>
+        <div class="story-box">
+            <p>CouplesCash was born from a personal frustration. Our founders, Alex and Jamie, were a couple struggling to manage their shared expenses while maintaining separate bank accounts. They tried spreadsheets, expense-splitting apps, and even a traditional joint account, but nothing felt quite right.</p>
+            
+            <p>Traditional joint accounts felt like giving up financial independence. Separate accounts with splitting apps created awkward "who pays for what?" conversations. There had to be a better way.</p>
+            
+            <p>After talking to hundreds of couples, they realized they weren't alone. Modern relationships needed modern banking solutions. So in 2023, they set out to build the bank account they wished they'd had.</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">10K+</span>
+                <div class="stat-label">Happy Couples</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">$25M+</span>
+                <div class="stat-label">Managed Together</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">4.9★</span>
+                <div class="stat-label">App Store Rating</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">99.9%</span>
+                <div class="stat-label">Uptime</div>
+            </div>
+        </div>
+        
+        <h2>Why Couples Need This</h2>
+        <p>Traditional banking wasn't designed for modern relationships. Here's what we learned from talking to thousands of couples:</p>
+        
+        <ul>
+            <li><strong>Financial transparency builds trust.</strong> Couples who can see each other's spending patterns have fewer money fights.</li>
+            <li><strong>Shared goals motivate better habits.</strong> Saving for a vacation together is more motivating than saving alone.</li>
+            <li><strong>Small purchases don't need approval.</strong> But big ones benefit from partner input.</li>
+            <li><strong>Money conversations should be ongoing.</strong> Not just during monthly "budget meetings."</li>
+            <li><strong>Each person needs some autonomy.</strong> Individual spending freedom within agreed boundaries.</li>
+        </ul>
+        
+        <h2>Our Values</h2>
+        <div class="values-grid">
+            <div class="value-item">
+                <h4>Transparency</h4>
+                <p>No hidden fees, no data selling, no surprises. Everything we do is in service of our users.</p>
+            </div>
+            <div class="value-item">
+                <h4>Trust</h4>
+                <p>Your money is FDIC insured, your data is encrypted, and your privacy is protected.</p>
+            </div>
+            <div class="value-item">
+                <h4>Simplicity</h4>
+                <p>Banking should be intuitive, not complicated. We design for real people, not financial experts.</p>
+            </div>
+            <div class="value-item">
+                <h4>Partnership</h4>
+                <p>We're built for two. Every feature considers how couples actually manage money together.</p>
+            </div>
+        </div>
+        
+        <h2>Our Team</h2>
+        <p>We're a small but passionate team of designers, engineers, and financial experts who believe in building products that strengthen relationships.</p>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <h4>Alex Chen</h4>
+                <div class="title">Co-Founder & CEO</div>
+                <p>Former product manager at Square. Passionate about fintech and relationship psychology.</p>
+            </div>
+            <div class="team-member">
+                <h4>Jamie Rodriguez</h4>
+                <div class="title">Co-Founder & CTO</div>
+                <p>Ex-software engineer at Stripe. Expert in secure financial infrastructure and mobile apps.</p>
+            </div>
+            <div class="team-member">
+                <h4>Sarah Kim</h4>
+                <div class="title">Head of Design</div>
+                <p>Previously at Apple and Airbnb. Focuses on creating delightful, intuitive user experiences.</p>
+            </div>
+            <div class="team-member">
+                <h4>Marcus Thompson</h4>
+                <div class="title">Head of Engineering</div>
+                <p>Former senior engineer at Robinhood. Specialist in scalable, secure financial platforms.</p>
+            </div>
+            <div class="team-member">
+                <h4>Dr. Lisa Park</h4>
+                <div class="title">Financial Behavioral Advisor</div>
+                <p>PhD in behavioral economics. Helps us understand how couples make financial decisions.</p>
+            </div>
+            <div class="team-member">
+                <h4>David Wu</h4>
+                <div class="title">Head of Customer Success</div>
+                <p>Previously at Zendesk. Ensures every couple has an amazing experience with our product.</p>
+            </div>
+        </div>
+        
+        <h2>Security & Trust</h2>
+        <p>Your financial security is our top priority:</p>
+        <ul>
+            <li>FDIC insured up to $500,000 per couple through Evolve Bank & Trust</li>
+            <li>Bank-level 256-bit AES encryption for all data</li>
+            <li>Multi-factor authentication and biometric login options</li>
+            <li>24/7 fraud monitoring and instant transaction notifications</li>
+            <li>SOC 2 Type II certified security infrastructure</li>
+        </ul>
+        
+        <h2>Looking Forward</h2>
+        <p>We're just getting started. Our roadmap includes features like shared investment accounts, automated savings challenges, bill splitting with friends, and AI-powered spending insights.</p>
+        
+        <p>But our core mission remains the same: helping couples build stronger financial relationships, one transparent transaction at a time.</p>
+        
+        <div class="highlight-box">
+            <p>Want to join us? We're always looking for talented people who believe in our mission. <a href="/careers.html" style="color: var(--dark-charcoal); text-decoration: underline;">Check out our careers page.</a></p>
+        </div>
+        
+        <a href="/" class="back-btn">Back to Home</a>
+    </div>
+</body>
+</html>
