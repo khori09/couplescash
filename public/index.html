@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CouplesCash - The debit card & app for couples</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-green: #BBF174;
+            --primary-teal: #035C67;
+            --dark-charcoal: #1D252C;
+            --light-gray: #F7F8F9;
+            --text-gray: #6B7280;
+            --border-gray: #E5E7EB;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--dark-charcoal);
+            background: var(--white);
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-gray);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-teal);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--dark-charcoal);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-teal);
+        }
+        
+        .nav-cta {
+            background: var(--primary-green);
+            color: var(--dark-charcoal);
+            padding: 10px 24px;
+            border-radius: 100px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--dark-charcoal);
+        }
+        
+        .hero-content .subtitle {
+            font-size: 20px;
+            color: var(--text-gray);
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+        
+        .signup-form {
+            max-width: 500px;
+            margin-bottom: 16px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .form-group {
+            flex: 1;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 14px 20px;
+            border: none;
+            background: var(--light-gray);
+            border-radius: 100px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            background: white;
+            box-shadow: 0 0 0 2px var(--primary-green);
+        }
+        
+        .partners-heading {
+            text-align: center;
+            font-size: 18px;
+            color: var(--text-primary);
+            margin: 24px 0 16px;
+            font-weight: 600;
+        }
+        
+        .get-started-btn {
+            width: 100%;
+            background: var(--primary-green);
+            color: var(--dark-charcoal);
+            padding: 14px 32px;
+            border: none;
+            border-radius: 100px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .get-started-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .trust-indicators {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-top: 24px;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .stars {
+            color: #FFC107;
+        }
+        
+        .hero-image {
+            position: relative;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .phone-mockup {
+            width: 300px;
+            height: 600px;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-teal) 100%);
+            border-radius: 40px;
+            padding: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .phone-screen {
+            background: white;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .mock-balance {
+            text-align: center;
+            padding: 20px;
+            background: var(--light-gray);
+            border-radius: 12px;
+        }
+        
+        .mock-balance .label {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+        
+        .mock-balance .amount {
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--primary-teal);
+        }
+        
+        /* Features Section */
+        .features-section {
+            background: var(--light-gray);
+            padding: 80px 20px;
+        }
+        
+        .features-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--dark-charcoal);
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: var(--text-gray);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--primary-green);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 32px;
+        }
+        
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--dark-charcoal);
+        }
+        
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* How it Works */
+        .how-it-works {
+            padding: 80px 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-teal);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .step h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--dark-charcoal);
+        }
+        
+        .step p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            background: var(--light-gray);
+            padding: 80px 20px;
+        }
+        
+        .pricing-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 24px;
+            padding: 48px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .pricing-card h3 {
+            font-size: 32px;
+            margin-bottom: 16px;
+            color: var(--dark-charcoal);
+        }
+        
+        .price {
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--primary-teal);
+            margin: 24px 0;
+        }
+        
+        .price-period {
+            font-size: 18px;
+            color: var(--text-gray);
+            font-weight: normal;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 32px 0;
+        }
+        
+        .pricing-features li {
+            padding: 12px 0;
+            color: var(--dark-charcoal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 16px;
+        }
+        
+        .check {
+            color: var(--primary-green);
+            font-size: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-charcoal);
+            color: white;
+            padding: 60px 20px;
+        }
+        
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        
+        .footer-column h4 {
+            font-size: 16px;
+            margin-bottom: 16px;
+            color: white;
+        }
+        
+        .footer-column a {
+            display: block;
+            color: #94A3B8;
+            text-decoration: none;
+            padding: 4px 0;
+            font-size: 14px;
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 40px auto 0;
+            padding-top: 40px;
+            border-top: 1px solid #334155;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: #94A3B8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-content h1 {
+                font-size: 40px;
+            }
+            
+            .signup-form {
+                margin: 0 auto;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+        }
+        
+        .badge {
+            background: var(--primary-green);
+            color: var(--dark-charcoal);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                💑 CouplesCash
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how">How it works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#" class="nav-cta">Get started</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">NEW: Now with Visa debit cards</div>
+            <h1>The debit card & app for couples</h1>
+            <p class="subtitle">Learn to manage money together. Build healthy financial habits. Save for your future — all in one app.</p>
+            
+            <form class="signup-form" id="waitlistForm">
+                <div class="partners-heading">💑 Tell us about your partnership</div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Your name</label>
+                        <input type="text" class="form-input" id="yourName" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Your phone</label>
+                        <input type="tel" class="form-input" id="yourPhone" placeholder="(555) 123-4567" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Partner's name</label>
+                        <input type="text" class="form-input" id="partnerName" placeholder="Enter partner's name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Partner's phone</label>
+                        <input type="tel" class="form-input" id="partnerPhone" placeholder="(555) 987-6543" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="get-started-btn">Join the waitlist together</button>
+            </form>
+            
+            <div class="trust-indicators">
+                <div class="rating">
+                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                    <span>4.9 App Store rating</span>
+                </div>
+                <div>
+                    <strong>50,000+</strong> couples trust CouplesCash
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-image">
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="mock-balance">
+                        <div class="label">Joint Balance</div>
+                        <div class="amount">$2,847</div>
+                    </div>
+                    <div class="mock-balance">
+                        <div class="label">Sarah's Card</div>
+                        <div class="amount">💳 •••• 4821</div>
+                    </div>
+                    <div class="mock-balance">
+                        <div class="label">Mike's Card</div>
+                        <div class="amount">💳 •••• 7392</div>
+                    </div>
+                    <div style="text-align: center; padding: 20px; background: var(--primary-green); border-radius: 12px;">
+                        <div style="font-size: 14px;">Next Goal</div>
+                        <div style="font-size: 20px; font-weight: bold;">Vacation Fund</div>
+                        <div style="font-size: 14px; margin-top: 8px;">75% Complete</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="features-container">
+            <div class="section-header">
+                <h2>Everything you need to manage money together</h2>
+                <p>One app for saving, spending, and growing together financially</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Two debit cards</h3>
+                    <p>Each partner gets their own card linked to the joint account. Real-time notifications for every transaction.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Dual approval</h3>
+                    <p>Set spending limits that require both partners to approve. Perfect for large purchases.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Savings goals</h3>
+                    <p>Set and track goals together. Watch your progress with visual trackers and milestone celebrations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Spending insights</h3>
+                    <p>See where your money goes with automatic categorization and monthly reports.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Earn 4.5% APY</h3>
+                    <p>Your money grows while it sits. No minimum balance, no fees, just growth.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>FDIC insured</h3>
+                    <p>Your funds are protected up to $500,000 through our banking partners.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How it Works -->
+    <section class="how-it-works" id="how">
+        <div class="section-header">
+            <h2>Getting started is easy</h2>
+            <p>Join thousands of couples building financial harmony</p>
+        </div>
+        
+        <div class="steps-grid">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h4>Sign up together</h4>
+                <p>Both partners download the app and verify identity in minutes</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h4>Get your cards</h4>
+                <p>Free debit cards arrive in 5-7 business days</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h4>Fund your account</h4>
+                <p>Transfer money from your existing banks instantly</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h4>Start spending</h4>
+                <p>Use your cards everywhere Visa is accepted</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="pricing-container">
+            <div class="section-header">
+                <h2>Simple, transparent pricing</h2>
+                <p>No hidden fees. Cancel anytime.</p>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>CouplesCash Complete</h3>
+                <div class="price">
+                    $0<span class="price-period">/month</span>
+                </div>
+                <p style="color: var(--text-gray); margin-bottom: 32px;">
+                    Free forever. We make money like banks do — from interchange fees when you use your cards.
+                </p>
+                
+                <ul class="pricing-features">
+                    <li><span class="check">✓</span> Two free debit cards</li>
+                    <li><span class="check">✓</span> Joint checking account</li>
+                    <li><span class="check">✓</span> 4.5% APY on savings</li>
+                    <li><span class="check">✓</span> Unlimited goals</li>
+                    <li><span class="check">✓</span> Spending insights</li>
+                    <li><span class="check">✓</span> Dual approval controls</li>
+                    <li><span class="check">✓</span> FDIC insured to $500k</li>
+                    <li><span class="check">✓</span> 24/7 customer support</li>
+                </ul>
+                
+                <button class="get-started-btn" style="width: 100%; padding: 16px;">
+                    Start free today
+                </button>
+                
+                <p style="color: var(--text-gray); font-size: 14px; margin-top: 16px;">
+                    No credit check required • Set up in 3 minutes
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Product</h4>
+                <a href="#">Features</a>
+                <a href="#">Pricing</a>
+                <a href="#">Security</a>
+                <a href="#">Reviews</a>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <a href="#">About</a>
+                <a href="#">Blog</a>
+                <a href="#">Careers</a>
+                <a href="#">Press</a>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Contact</a>
+                <a href="#">System Status</a>
+                <a href="#">Developer API</a>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cardholder Agreement</a>
+                <a href="#">E-Sign Consent</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div>© 2024 CouplesCash Inc. All rights reserved.</div>
+            <div>
+                CouplesCash accounts are FDIC insured through Evolve Bank & Trust, Member FDIC.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Handle form submission
+        document.getElementById('waitlistForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = e.target.querySelector('.get-started-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Adding to waitlist...';
+            submitBtn.disabled = true;
+            
+            const formData = {
+                yourName: document.getElementById('yourName').value,
+                yourPhone: document.getElementById('yourPhone').value,
+                partnerName: document.getElementById('partnerName').value,
+                partnerPhone: document.getElementById('partnerPhone').value
+            };
+            
+            try {
+                const response = await fetch('/api/waitlist', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Store data for thank you page
+                    sessionStorage.setItem('waitlistData', JSON.stringify({
+                        ...formData,
+                        position: result.position
+                    }));
+                    // Redirect to thank you page
+                    window.location.href = '/couplescash-thanks.html';
+                } else {
+                    alert(result.message || 'Something went wrong. Please try again.');
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Unable to connect to server. Please try again later.');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
